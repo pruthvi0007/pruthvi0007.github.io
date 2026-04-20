@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pruthvi Rathod — Technical Lead & Full-Stack Engineer</title>
+<meta name="description" content="Technical Lead building and running production systems on AWS. Full-stack engineer with experience across enterprise banking and non-profit technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--bg3:#1a1a1a;
+  --text:#e8e6e1;--text2:#a09d95;--text3:#6b6862;
+  --accent:#c7956d;--accent2:#e8b48a;--accent-dim:#4a3626;
+  --border:#252420;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+  --serif:'DM Serif Display',Georgia,serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--sans);color:var(--text);background:var(--bg);
+  line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
+
+/* Layout */
+.container{max-width:960px;margin:0 auto;padding:0 2rem}
+section{padding:5rem 0;border-bottom:1px solid var(--border)}
+
+/* Nav */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(12,12,12,.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+nav .container{
+  display:flex;justify-content:space-between;align-items:center;
+  height:60px;
+}
+nav .logo{font-family:var(--serif);font-size:1.25rem;color:var(--text);letter-spacing:-0.02em}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{color:var(--text2);font-size:.875rem;font-weight:500;letter-spacing:.03em;text-transform:uppercase}
+nav a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{
+  min-height:90vh;display:flex;align-items:center;
+  padding-top:60px;
+  background:
+    radial-gradient(ellipse 600px 400px at 70% 40%,rgba(199,149,109,.06),transparent),
+    radial-gradient(ellipse 400px 300px at 20% 70%,rgba(199,149,109,.03),transparent);
+}
+.hero-content{max-width:680px}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(2.5rem,5vw,3.75rem);
+  line-height:1.15;letter-spacing:-0.03em;color:var(--text);
+  margin-bottom:1.5rem;
+}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:1.125rem;color:var(--text2);max-width:540px;margin-bottom:2rem}
+.hero-links{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-links a{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.6rem 1.25rem;border-radius:6px;font-size:.875rem;font-weight:500;
+  border:1px solid var(--border);color:var(--text2);transition:all .2s;
+}
+.hero-links a:hover{border-color:var(--accent);color:var(--accent)}
+.hero-links a.primary{background:var(--accent-dim);border-color:var(--accent);color:var(--accent2)}
+.hero-links a.primary:hover{background:var(--accent);color:var(--bg)}
+
+/* Section headers */
+.section-label{
+  font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.75rem;
+}
+.section-title{
+  font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.25rem);
+  letter-spacing:-0.02em;margin-bottom:1rem;
+}
+.section-desc{color:var(--text2);max-width:560px;margin-bottom:3rem}
+
+/* Case studies */
+.case-study{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:2.5rem;margin-bottom:2rem;transition:border-color .3s;
+}
+.case-study:hover{border-color:var(--accent-dim)}
+.case-study .tag{
+  display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);background:var(--accent-dim);
+  padding:.25rem .6rem;border-radius:4px;margin-bottom:1rem;
+}
+.case-study h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:.75rem;letter-spacing:-0.01em}
+.case-study .problem{color:var(--text2);margin-bottom:1.25rem;font-size:.95rem}
+.case-study .approach{margin-bottom:1.25rem}
+.case-study .approach h4{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
+.case-study .approach p{color:var(--text2);font-size:.9rem}
+.case-study .result{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.4rem .8rem;border-radius:5px;font-size:.85rem;font-weight:500;
+  background:rgba(76,175,80,.1);color:#81c784;border:1px solid rgba(76,175,80,.15);
+}
+
+/* Tech stack */
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.stack-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.75rem}
+.stack-card h3{font-size:1rem;font-weight:600;margin-bottom:.75rem;color:var(--text)}
+.stack-card .items{display:flex;flex-wrap:wrap;gap:.4rem}
+.stack-card .items span{
+  font-size:.8rem;padding:.3rem .6rem;border-radius:4px;
+  background:var(--bg3);color:var(--text2);border:1px solid var(--border);
+}
+
+/* Architecture diagrams (placeholder styling) */
+.arch-diagram{
+  background:var(--bg3);border:1px solid var(--border);border-radius:8px;
+  padding:2rem;margin:1.25rem 0;text-align:center;
+  font-family:var(--sans);font-size:.85rem;color:var(--text3);
+}
+.arch-diagram .flow{
+  display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;
+  margin:1rem 0;
+}
+.arch-diagram .node{
+  background:var(--bg2);border:1px solid var(--border);border-radius:6px;
+  padding:.5rem 1rem;font-size:.8rem;color:var(--text2);white-space:nowrap;
+}
+.arch-diagram .node.highlight{border-color:var(--accent);color:var(--accent)}
+.arch-diagram .arrow{color:var(--text3);font-size:1.25rem}
+
+/* Contact */
+.contact-links{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.contact-links a{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 1.5rem;border-radius:8px;font-size:.9rem;font-weight:500;
+  background:var(--bg2);border:1px solid var(--border);color:var(--text2);
+  transition:all .2s;
+}
+.contact-links a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Footer */
+footer{
+  padding:2.5rem 0;text-align:center;
+  color:var(--text3);font-size:.8rem;
+}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .7s ease forwards}
+.fade-up:nth-child(1){animation-delay:.1s}
+.fade-up:nth-child(2){animation-delay:.2s}
+.fade-up:nth-child(3){animation-delay:.3s}
+.fade-up:nth-child(4){animation-delay:.4s}
+
+/* Mobile */
+@media(max-width:640px){
+  .container{padding:0 1.25rem}
+  section{padding:3.5rem 0}
+  nav ul{gap:1rem}
+  nav a{font-size:.75rem}
+  .hero{min-height:auto;padding-top:100px;padding-bottom:3rem}
+  .stack-grid{grid-template-columns:1fr}
+  .arch-diagram .flow{flex-direction:column;gap:.5rem}
+  .arch-diagram .arrow{transform:rotate(90deg)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="logo">PR</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="fade-up">I build and run <span>production systems</span> end-to-end.</h1>
+      <p class="fade-up">Technical Lead and Full-Stack Engineer. Currently the sole engineer running an entire non-profit's technology platform on AWS — frontend, backend, infrastructure, databases, email, and security.</p>
+      <div class="hero-links fade-up">
+        <a href="./Pruthvi_Rathod_Resume.pdf" class="primary">Download Resume</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/pruthvi-rathod-07b56a138" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <p class="section-label fade-up">Case Studies</p>
+    <h2 class="section-title fade-up">What I've built</h2>
+    <p class="section-desc fade-up">Production systems I designed, built, and shipped — described in terms of problems solved and architecture decisions made. No proprietary code, just engineering thinking.</p>
+
+    <div class="case-study fade-up">
+      <span class="tag">System Design</span>
+      <h3>Dynamic Scoring Engine</h3>
+      <p class="problem">External judges needed to evaluate hundreds of applicants across multiple programmes, each with different criteria and scoring rubrics. The previous process was manual spreadsheets — slow, error-prone, and didn't scale.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Designed an algorithm-driven form engine with configurable point-scoring logic. Forms are dynamically generated from a schema that defines fields, weights, and scoring rules. Judges are assigned forms with granular permissions, and scores aggregate in real-time across evaluators.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="flow">
+          <span class="node">Admin Config</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">Form Schema Engine</span>
+          <span class="arrow">→</span>
+          <span class="node">Dynamic Forms</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">Score Aggregator</span>
+          <span class="arrow">→</span>
+          <span class="node">Results Dashboard</span>
+        </div>
+        Node.js + Express / MySQL / React
+      </div>
+      <span class="result">~60% reduction in manual evaluation effort</span>
+    </div>
+
+    <div class="case-study fade-up">
+      <span class="tag">AWS Migration</span>
+      <h3>Legacy Platform to Modern AWS Stack</h3>
+      <p class="problem">Inherited a legacy codebase from a third-party vendor with 15+ critical production bugs, no documentation, and recurring outages. The platform needed to be stabilised immediately while planning a migration to a modern, maintainable architecture.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>First stabilised production by triaging and fixing all critical bugs. Then planned a phased migration to AWS — EC2 for compute, RDS for managed MySQL, S3 for assets, CloudFront for CDN, Route 53 for DNS, and SES for transactional email with proper DMARC/SPF/DKIM authentication. Nginx as reverse proxy with SSL termination. Redis for session and query caching.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="flow">
+          <span class="node">CloudFront CDN</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">EC2 + Nginx</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">Node.js API</span>
+          <span class="arrow">→</span>
+          <span class="node">RDS MySQL</span>
+        </div>
+        <div class="flow" style="margin-top:.5rem">
+          <span class="node">Route 53</span>
+          <span class="node">SES (DMARC)</span>
+          <span class="node">Redis</span>
+          <span class="node">S3</span>
+          <span class="node">CloudWatch</span>
+        </div>
+        Full AWS stack / Zero recurring outages post-migration
+      </div>
+      <span class="result">Eliminated all recurring production outages</span>
+    </div>
+
+    <div class="case-study fade-up">
+      <span class="tag">Product Feature</span>
+      <h3>WYSIWYG Content Management System</h3>
+      <p class="problem">Non-technical staff needed to publish news articles, blog posts, and programme updates. Every content change required a developer, creating a bottleneck and 3-5 day turnaround for simple updates.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Built a rich text editor integrated into the admin panel, with image uploads to S3, draft/publish workflow, SEO metadata fields, and a public-facing rendering engine. Staff can now write, preview, and publish content independently.</p>
+      </div>
+      <span class="result">70% reduction in content turnaround time</span>
+    </div>
+
+    <div class="case-study fade-up">
+      <span class="tag">Infrastructure</span>
+      <h3>Email Security & Deliverability</h3>
+      <p class="problem">Transactional emails (password resets, notifications, programme updates) were landing in spam or not being delivered at all. No email authentication was configured, damaging sender reputation.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Configured AWS SES as the email provider with full DMARC, SPF, and DKIM authentication. Set up a custom MAIL FROM domain for SPF alignment. Added CloudWatch event tracking for bounces and complaints. Configured Nginx for proper reverse DNS. Moved DMARC policy from "none" to "quarantine" after monitoring reports.</p>
+      </div>
+      <span class="result">Near-100% inbox delivery rate after configuration</span>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="container">
+    <p class="section-label">Tech Stack</p>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-desc">Technologies I use in production daily, not just ones I've read about.</p>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h3>Backend</h3>
+        <div class="items">
+          <span>Node.js</span><span>Express</span><span>Java</span><span>Spring Boot</span><span>Python</span><span>FastAPI</span><span>REST APIs</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Frontend</h3>
+        <div class="items">
+          <span>React</span><span>Next.js</span><span>JavaScript ES6+</span><span>HTML/CSS</span><span>Tailwind</span><span>Bootstrap</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>AWS</h3>
+        <div class="items">
+          <span>EC2</span><span>RDS</span><span>S3</span><span>Lambda</span><span>CloudFront</span><span>Route 53</span><span>SES</span><span>VPC</span><span>CloudWatch</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Infrastructure</h3>
+        <div class="items">
+          <span>Nginx</span><span>Docker</span><span>Redis</span><span>Linux</span><span>SSL/TLS</span><span>DMARC/SPF/DKIM</span><span>Firebase</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Databases</h3>
+        <div class="items">
+          <span>MySQL</span><span>Firestore</span><span>Query Optimization</span><span>Schema Design</span><span>Migrations</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Tools & Process</h3>
+        <div class="items">
+          <span>Git</span><span>Postman</span><span>CI/CD</span><span>Agile</span><span>Code Review</span><span>System Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="section-desc">Open to Technical Lead, Full-Stack, or Backend Engineering roles. Currently based in India.</p>
+    <div class="contact-links">
+      <a href="mailto:r.pruthvi07@gmail.com">r.pruthvi07@gmail.com</a>
+      <a href="https://linkedin.com/in/pruthvi-rathod-07b56a138" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Pruthvi Rathod &copy; 2026</p>
+  </div>
+</footer>
+
+<script>
+// Scroll-triggered fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
