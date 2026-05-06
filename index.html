@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pruthvi Rathod — Technical Manager & Full Stack Engineer</title>
+<meta name="description" content="Technical Manager and Full Stack Engineer. Owns product, people, and production systems end to end.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--bg3:#1a1a1a;
+  --text:#e8e6e1;--text2:#a09d95;--text3:#6b6862;
+  --accent:#c7956d;--accent2:#e8b48a;--accent-dim:#4a3626;
+  --border:#252420;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+  --serif:'DM Serif Display',Georgia,serif;
+  --nav-h:60px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
+
+.container{max-width:960px;margin:0 auto;padding:0 2rem}
+section{padding:4rem 0;border-bottom:1px solid var(--border)}
+
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,12,12,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .container{display:flex;justify-content:space-between;align-items:center;height:var(--nav-h)}
+nav .logo{font-family:var(--serif);font-size:1.1rem;color:var(--text);letter-spacing:-0.02em;display:flex;align-items:center;gap:.4rem}
+nav .logo span{font-family:var(--sans);font-size:.72rem;font-weight:500;color:var(--text3);letter-spacing:.05em;text-transform:uppercase}
+nav ul{display:flex;gap:1.75rem;list-style:none}
+nav a{color:var(--text2);font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+nav a:hover{color:var(--accent)}
+
+/* ── Hero ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:calc(var(--nav-h) + 4rem);padding-bottom:4rem;
+  background:radial-gradient(ellipse 600px 400px at 70% 40%,rgba(199,149,109,.07),transparent),
+             radial-gradient(ellipse 400px 300px at 20% 70%,rgba(199,149,109,.04),transparent)}
+.hero-content{max-width:680px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.13;letter-spacing:-0.03em;color:var(--text);margin-bottom:1.25rem}
+.hero h1 span{color:var(--accent)}
+.hero .hero-sub{font-size:1rem;color:var(--text2);max-width:560px;margin-bottom:.75rem;line-height:1.75}
+.hero-meta{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.8rem;color:var(--text3);margin-bottom:2rem}
+.hero-meta span{display:flex;align-items:center;gap:.35rem}
+.hero-links{display:flex;gap:.75rem;flex-wrap:wrap}
+.hero-links a{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.15rem;border-radius:6px;font-size:.85rem;font-weight:500;border:1px solid var(--border);color:var(--text2);transition:all .2s}
+.hero-links a:hover{border-color:var(--accent);color:var(--accent)}
+.hero-links a.primary{background:var(--accent-dim);border-color:var(--accent);color:var(--accent2)}
+.hero-links a.primary:hover{background:var(--accent);color:var(--bg)}
+
+/* ── Section header — tight spacing ── */
+.section-label{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-0.02em;margin-bottom:.5rem}
+.section-desc{color:var(--text2);max-width:560px;margin-bottom:2rem;font-size:.95rem}
+
+/* ── Role Cards ── */
+.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+.role-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.75rem;position:relative;overflow:hidden;transition:border-color .3s}
+.role-card:hover{border-color:var(--accent-dim)}
+.role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background .3s}
+.role-card:hover::before{background:var(--accent)}
+.role-card .rc-icon{font-size:1.6rem;margin-bottom:.85rem;display:block}
+.role-card h3{font-family:var(--serif);font-size:1.15rem;margin-bottom:.5rem;letter-spacing:-0.01em}
+.role-card p{font-size:.85rem;color:var(--text2);line-height:1.65;margin-bottom:1rem}
+.role-card .rc-proofs{display:flex;flex-direction:column;gap:.3rem}
+.role-card .rc-proofs span{font-size:.77rem;color:var(--accent2);display:flex;align-items:flex-start;gap:.4rem}
+.role-card .rc-proofs span::before{content:'✓';color:var(--accent);flex-shrink:0;margin-top:2px}
+
+/* ── What I bring row ── */
+.bring-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+.bring-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.25rem}
+.bring-item .bi-label{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+.bring-item .bi-value{font-size:.9rem;color:var(--text);font-weight:500}
+
+/* ── Leadership timeline ── */
+.leadership{display:flex;flex-direction:column;gap:0;margin-bottom:2.5rem}
+.l-item{display:grid;grid-template-columns:160px 1fr;gap:0 2rem;position:relative;padding-bottom:2rem}
+.l-item:last-child{padding-bottom:0}
+.l-item::before{content:'';position:absolute;left:168px;top:8px;bottom:0;width:1px;background:var(--border)}
+.l-item:last-child::before{display:none}
+.l-item .l-date{font-size:.78rem;color:var(--text3);font-weight:500;padding-top:2px;text-align:right;line-height:1.4}
+.l-item .l-dot{position:absolute;left:163px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent-dim);border:2px solid var(--accent)}
+.l-item .l-body{padding-left:1.5rem}
+.l-item .l-role{font-weight:600;font-size:.95rem;color:var(--text);line-height:1.3}
+.l-item .l-org{font-size:.8rem;color:var(--accent);margin-bottom:.5rem}
+.l-item .l-desc{font-size:.875rem;color:var(--text2);line-height:1.65}
+.l-item .l-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
+.l-item .l-tags span{font-size:.72rem;padding:.2rem .55rem;border-radius:3px;background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
+
+/* ── Case studies ── */
+.case-study{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2.25rem;margin-bottom:1.5rem;transition:border-color .3s}
+.case-study:hover{border-color:var(--accent-dim)}
+.case-study .tag{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:.2rem .55rem;border-radius:4px;margin-bottom:.85rem}
+.case-study h3{font-family:var(--serif);font-size:1.35rem;margin-bottom:.6rem;letter-spacing:-0.01em}
+.case-study .problem{color:var(--text2);margin-bottom:1rem;font-size:.9rem}
+.case-study .approach{margin-bottom:1rem}
+.case-study .approach h4{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:.4rem}
+.case-study .approach p{color:var(--text2);font-size:.875rem}
+.case-study .result{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .75rem;border-radius:5px;font-size:.82rem;font-weight:500;background:rgba(76,175,80,.1);color:#81c784;border:1px solid rgba(76,175,80,.15)}
+
+/* ── Tech stack ── */
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.25rem}
+.stack-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.stack-card h3{font-size:.95rem;font-weight:600;margin-bottom:.6rem;color:var(--text)}
+.stack-card .card-icon{font-size:1rem;margin-right:.35rem}
+.stack-card .items{display:flex;flex-wrap:wrap;gap:.35rem}
+.stack-card .items span{font-size:.77rem;padding:.25rem .55rem;border-radius:4px;background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+.stack-card.ai-card{border-color:var(--accent-dim)}
+.stack-card.ai-card h3{color:var(--accent2)}
+.stack-card.ai-card .items span{border-color:var(--accent-dim);color:var(--text)}
+
+/* ── Arch diagram ── */
+.arch-diagram{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin:1rem 0;text-align:center;font-size:.82rem;color:var(--text3)}
+.arch-diagram .flow{display:flex;align-items:center;justify-content:center;gap:.65rem;flex-wrap:wrap;margin:.75rem 0}
+.arch-diagram .node{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:.4rem .85rem;font-size:.77rem;color:var(--text2);white-space:nowrap}
+.arch-diagram .node.highlight{border-color:var(--accent);color:var(--accent)}
+.arch-diagram .arrow{color:var(--text3);font-size:1.1rem}
+
+/* ── Contact ── */
+.contact-links{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:1.25rem}
+.contact-links a{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:8px;font-size:.875rem;font-weight:500;background:var(--bg2);border:1px solid var(--border);color:var(--text2);transition:all .2s}
+.contact-links a:hover{border-color:var(--accent);color:var(--accent)}
+
+footer{padding:2rem 0;text-align:center;color:var(--text3);font-size:.78rem}
+
+/* ── Animations ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .65s ease forwards}
+.fade-up:nth-child(1){animation-delay:.08s}
+.fade-up:nth-child(2){animation-delay:.18s}
+.fade-up:nth-child(3){animation-delay:.28s}
+.fade-up:nth-child(4){animation-delay:.38s}
+.fade-up:nth-child(5){animation-delay:.46s}
+
+@media(max-width:768px){
+  .role-grid{grid-template-columns:1fr}
+  .bring-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .container{padding:0 1.25rem}
+  section{padding:3rem 0}
+  nav ul{gap:1rem}
+  nav a{font-size:.7rem}
+  .hero{padding-top:calc(var(--nav-h) + 2.5rem);padding-bottom:3rem;min-height:auto}
+  .stack-grid{grid-template-columns:1fr}
+  .arch-diagram .flow{flex-direction:column;gap:.4rem}
+  .arch-diagram .arrow{transform:rotate(90deg)}
+  .l-item{grid-template-columns:1fr;padding-left:1.5rem}
+  .l-item::before{left:4px}
+  .l-dot{left:0 !important}
+  .l-item .l-date{text-align:left;margin-bottom:.2rem}
+  .l-item .l-body{padding-left:0}
+  .bring-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="logo">Pruthvi Rathod <span>&nbsp;·&nbsp; Technical Manager</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#leadership">Career</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow fade-up">Technical Manager &amp; Full Stack Engineer</div>
+      <h1 class="fade-up">I own the <span>product, the team,</span> and the production system.</h1>
+      <p class="hero-sub fade-up">Technical Manager and Full Stack Engineer currently running an entire nonprofit platform on AWS — serving participants across 100+ countries. I move between architecture decisions, vendor negotiations, sprint planning, and shipping code — often on the same day.</p>
+      <div class="hero-meta fade-up">
+        <span>📍 India</span>
+        <span>🏗 4+ years production experience</span>
+        <span>👥 Led team of 4 engineers</span>
+        <span>🤝 Managed external vendor delivery</span>
+      </div>
+      <div class="hero-links fade-up">
+        <a href="https://github.com/pruthvi0007/pruthvi_resume.github.io/blob/main/Pruthvi_Rathod_Resume%20(2).pdf" class="primary" target="_blank">Download Resume</a>
+        <a href="https://github.com/pruthvi0007" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/pruthvi-rathod-07b56a138" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / ROLE FRAMING -->
+<section id="about">
+  <div class="container">
+    <p class="section-label fade-up">What I Do</p>
+    <h2 class="section-title fade-up">Technical Manager · Product Owner · Engineer</h2>
+    <p class="section-desc fade-up">Most engineers build features. Most managers attend meetings. I do both — and I own the outcomes from requirements all the way to production. Here is how each dimension shows up in my work.</p>
+
+    <div class="role-grid">
+
+      <div class="role-card fade-up">
+        <span class="rc-icon">🏗</span>
+        <h3>Technical Lead</h3>
+        <p>I design systems before anyone writes a line of code. Architecture decisions, infrastructure choices, database schema, API contracts — I set the standard and hold the team to it through code review and delivery oversight.</p>
+        <div class="rc-proofs">
+          <span>Sole engineer running a global AWS platform across 100+ countries</span>
+          <span>Migrated legacy vendor codebase to modern AWS stack with zero recurring outages</span>
+          <span>Set architecture standards and review processes for a team of 4 from scratch</span>
+        </div>
+      </div>
+
+      <div class="role-card fade-up">
+        <span class="rc-icon">👥</span>
+        <h3>Engineering Manager</h3>
+        <p>I have built a team from nothing and managed a vendor before that. I run sprint planning, unblock engineers, do code reviews, write technical specs, handle escalations, and make hiring decisions — without losing touch with the codebase.</p>
+        <div class="rc-proofs">
+          <span>Built and led an in house engineering team of 4 after vendor transition</span>
+          <span>Managed a third party agency end to end — sprints, deliverables, escalations</span>
+          <span>Promoted from coordinator to manager within 6 months based on delivery</span>
+        </div>
+      </div>
+
+      <div class="role-card fade-up">
+        <span class="rc-icon">📦</span>
+        <h3>Product Owner</h3>
+        <p>I translate business goals into product decisions and engineering work. I write requirements, define scope, manage stakeholder expectations, prioritise the backlog, and track outcomes — not just outputs.</p>
+        <div class="rc-proofs">
+          <span>Reduced manual evaluation effort by ~60% with a configurable scoring engine</span>
+          <span>Cut content turnaround by 70% by shipping a WYSIWYG CMS for non technical staff</span>
+          <span>Reduced rework cycles by ~40% through sharper requirements and stakeholder alignment</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bring-row">
+      <div class="bring-item fade-up">
+        <div class="bi-label">Team Size Led</div>
+        <div class="bi-value">4 Engineers</div>
+      </div>
+      <div class="bring-item fade-up">
+        <div class="bi-label">Vendor Managed</div>
+        <div class="bi-value">1 External Agency</div>
+      </div>
+      <div class="bring-item fade-up">
+        <div class="bi-label">Production Reach</div>
+        <div class="bi-value">100+ Countries</div>
+      </div>
+      <div class="bring-item fade-up">
+        <div class="bi-label">Cloud Platform</div>
+        <div class="bi-value">AWS · GCP · Firebase</div>
+      </div>
+      <div class="bring-item fade-up">
+        <div class="bi-label">Total Experience</div>
+        <div class="bi-value">4+ Years</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section id="leadership">
+  <div class="container">
+    <p class="section-label fade-up">Career</p>
+    <h2 class="section-title fade-up">Where I have worked</h2>
+    <p class="section-desc fade-up">From enterprise banking to running a nonprofit global platform — each role added a new layer of ownership.</p>
+
+    <div class="leadership">
+
+      <div class="l-item fade-up">
+        <div class="l-date">Feb 2024<br>→ Present</div>
+        <div class="l-dot"></div>
+        <div class="l-body">
+          <div class="l-role">Technical Manager &amp; Sole Engineer</div>
+          <div class="l-org">QS ImpACT · Remote</div>
+          <div class="l-desc">
+            After leading the transition away from the external vendor, built and led a 4 person engineering team covering backend, frontend, DevOps, and QA. Set architecture direction, ran sprint ceremonies, owned code reviews, and managed production end to end. Also operated as the sole hands on engineer for the full platform in parallel. Promoted from coordinator to manager within 6 months based on delivery performance.
+          </div>
+          <div class="l-tags">
+            <span>Team of 4</span><span>Architecture</span><span>Sprint Management</span><span>Code Review</span><span>Production Ownership</span><span>Incident Response</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="l-item fade-up">
+        <div class="l-date">Aug 2023<br>→ Feb 2024</div>
+        <div class="l-dot"></div>
+        <div class="l-body">
+          <div class="l-role">Technical Project Coordinator · Vendor Manager</div>
+          <div class="l-org">QS ImpACT · Mumbai</div>
+          <div class="l-desc">
+            Sole point of contact between QS ImpACT leadership and the third party development agency. Ran sprint planning, held the vendor accountable to timelines and quality standards, translated business requirements into technical specifications, and managed escalations directly. Identified systemic failures in vendor delivery, built the internal business case to bring development in house, and was selected to lead that transition from the ground up. Rework cycles reduced by ~40%.
+          </div>
+          <div class="l-tags">
+            <span>Vendor Management</span><span>Sprint Planning</span><span>Requirements Writing</span><span>Stakeholder Alignment</span><span>In House Transition</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="l-item fade-up">
+        <div class="l-date">Dec 2021<br>→ Aug 2023</div>
+        <div class="l-dot"></div>
+        <div class="l-body">
+          <div class="l-role">Associate System Engineer</div>
+          <div class="l-org">Tata Consultancy Services · Hyderabad · ICICI Bank</div>
+          <div class="l-desc">
+            Backend developer on the Customer 360 platform serving 1,000+ relationship managers across ICICI branches. Designed and built RESTful APIs, improved data retrieval performance by ~25% through query optimisation and indexing, owned API testing end to end via Postman, and bridged engineering with business stakeholders across 3 major feature releases.
+          </div>
+          <div class="l-tags">
+            <span>Java</span><span>Spring Boot</span><span>REST API Design</span><span>Query Optimisation</span><span>Stakeholder Liaison</span><span>Banking Domain</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work">
+  <div class="container">
+    <p class="section-label fade-up">Case Studies</p>
+    <h2 class="section-title fade-up">What I have shipped</h2>
+    <p class="section-desc fade-up">Production systems designed, built, and owned — described through the problems they solved and the decisions that shaped them.</p>
+
+    <div class="case-study fade-up">
+      <span class="tag">Team Leadership</span>
+      <h3>Vendor to In House Engineering Transition</h3>
+      <p class="problem">The platform was owned by a third party vendor delivering poor quality — 15+ critical production bugs, recurring outages, and zero documentation. Leadership needed a single person to take over development entirely and fix it.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Stabilised production immediately by triaging and resolving all inherited bugs. Wrote the internal business case for in house development. Recruited and onboarded a 4 person team covering backend, frontend, DevOps, and QA. Established architecture standards, Git workflows, sprint ceremonies, and code review practices from scratch.</p>
+      </div>
+      <span class="result">Zero recurring outages · Team of 4 built and operational within 3 months</span>
+    </div>
+
+    <div class="case-study fade-up">
+      <span class="tag">Product · System Design</span>
+      <h3>Dynamic Scoring Engine</h3>
+      <p class="problem">External judges needed to evaluate hundreds of applicants across multiple programmes, each with different criteria and scoring rubrics. The previous process was manual spreadsheets — slow, error prone, and impossible to scale.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Designed a configurable form engine where scoring logic, field weights, and evaluation rubrics are defined at the admin level. Forms are dynamically generated per programme. Judges receive role scoped access; scores aggregate in real time across all evaluators and surface in a results dashboard.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="flow">
+          <span class="node">Admin Config</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">Form Schema Engine</span>
+          <span class="arrow">→</span>
+          <span class="node">Dynamic Forms</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">Score Aggregator</span>
+          <span class="arrow">→</span>
+          <span class="node">Results Dashboard</span>
+        </div>
+        Node.js · Express · MySQL · React
+      </div>
+      <span class="result">~60% reduction in manual evaluation effort</span>
+    </div>
+
+    <div class="case-study fade-up">
+      <span class="tag">Infrastructure · AWS</span>
+      <h3>Legacy Platform to Modern AWS Stack</h3>
+      <p class="problem">Inherited a codebase with no documentation, 15+ critical bugs, and recurring outages. The platform needed immediate stabilisation and a full migration to a maintainable, scalable architecture.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Phased migration to AWS — EC2 for compute, RDS for managed MySQL, S3 for assets, CloudFront for CDN, Route 53 for DNS, and SES with full DMARC/SPF/DKIM for transactional email. Nginx as reverse proxy with SSL termination. Redis for session and query caching. CloudWatch for monitoring and alerting.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="flow">
+          <span class="node">CloudFront CDN</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">EC2 + Nginx</span>
+          <span class="arrow">→</span>
+          <span class="node highlight">Node.js API</span>
+          <span class="arrow">→</span>
+          <span class="node">RDS MySQL</span>
+        </div>
+        <div class="flow" style="margin-top:.4rem">
+          <span class="node">Route 53</span>
+          <span class="node">SES · DMARC</span>
+          <span class="node">Redis</span>
+          <span class="node">S3</span>
+          <span class="node">CloudWatch</span>
+        </div>
+      </div>
+      <span class="result">Eliminated all recurring production outages</span>
+    </div>
+
+    <div class="case-study fade-up">
+      <span class="tag">Product Feature</span>
+      <h3>WYSIWYG Content Management System</h3>
+      <p class="problem">Every content update required a developer — creating a 3 to 5 day turnaround for simple article changes and pulling engineering capacity away from real product work.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Built a rich text editor inside the admin panel with image uploads to S3, draft and publish workflow, SEO metadata fields, and a public facing rendering engine. Non technical staff now write, preview, and publish content without touching engineering.</p>
+      </div>
+      <span class="result">70% reduction in content turnaround time</span>
+    </div>
+
+    <div class="case-study fade-up">
+      <span class="tag">Infrastructure</span>
+      <h3>Email Security and Deliverability</h3>
+      <p class="problem">Transactional emails were landing in spam or failing to deliver entirely. No authentication was configured, damaging sender reputation at scale across a global audience.</p>
+      <div class="approach">
+        <h4>Approach</h4>
+        <p>Configured AWS SES with full DMARC, SPF, and DKIM. Set up a custom MAIL FROM domain for SPF alignment. Added CloudWatch bounce and complaint tracking. Graduated DMARC policy from none to quarantine after validating monitoring reports over several weeks.</p>
+      </div>
+      <span class="result">Near 100% inbox delivery rate after configuration</span>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="stack">
+  <div class="container">
+    <p class="section-label">Tech Stack</p>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-desc">Technologies I use in production — not just ones I have read about.</p>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h3>Backend</h3>
+        <div class="items">
+          <span>Node.js</span><span>Express</span><span>Java</span><span>Spring Boot</span><span>Python</span><span>FastAPI</span><span>REST APIs</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Frontend</h3>
+        <div class="items">
+          <span>React</span><span>Next.js</span><span>JavaScript ES6+</span><span>HTML / CSS</span><span>Tailwind</span><span>Bootstrap</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>AWS</h3>
+        <div class="items">
+          <span>EC2</span><span>RDS</span><span>S3</span><span>Lambda</span><span>CloudFront</span><span>Route 53</span><span>SES</span><span>VPC</span><span>CloudWatch</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Infrastructure</h3>
+        <div class="items">
+          <span>Nginx</span><span>Docker</span><span>Redis</span><span>Linux</span><span>SSL / TLS</span><span>DMARC / SPF / DKIM</span><span>Firebase</span><span>GCP</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Databases</h3>
+        <div class="items">
+          <span>MySQL</span><span>Firestore</span><span>Query Optimisation</span><span>Schema Design</span><span>Migrations</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h3>Management &amp; Process</h3>
+        <div class="items">
+          <span>Agile / Scrum</span><span>Sprint Planning</span><span>Code Review</span><span>System Design</span><span>Vendor Management</span><span>Git</span><span>Postman</span>
+        </div>
+      </div>
+      <div class="stack-card ai-card">
+        <h3><span class="card-icon">🤖</span>AI &amp; LLM Engineering</h3>
+        <div class="items">
+          <span>OpenAI API</span><span>Anthropic API</span><span>Hugging Face</span><span>LangChain</span><span>RAG Pipelines</span><span>Prompt Engineering</span><span>Fine Tuning</span><span>LoRA / PEFT</span><span>FastAPI Inference</span><span>ChromaDB</span><span>pgvector</span>
+        </div>
+      </div>
+      <div class="stack-card ai-card">
+        <h3><span class="card-icon">⚙️</span>AI Infrastructure &amp; Serving</h3>
+        <div class="items">
+          <span>PyTorch</span><span>Transformers</span><span>Accelerate</span><span>PEFT</span><span>vLLM</span><span>Ollama</span><span>TGI</span><span>Quantization</span><span>GPU Inference</span><span>HF Datasets</span>
+        </div>
+      </div>
+      <div class="stack-card ai-card">
+        <h3><span class="card-icon">🎙️</span>Speech &amp; Voice AI</h3>
+        <div class="items">
+          <span>Whisper STT</span><span>Deepgram</span><span>Google Speech API</span><span>TTS Pipelines</span><span>Real Time Audio</span>
+        </div>
+      </div>
+      <div class="stack-card ai-card">
+        <h3><span class="card-icon">🗺️</span>Maps &amp; Geospatial</h3>
+        <div class="items">
+          <span>Google Maps API</span><span>Places API</span><span>Geocoding API</span><span>Mapbox</span><span>Location Search</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="section-desc">Open to Technical Manager, Engineering Lead, Full Stack, or Product Engineering roles. Currently based in India.</p>
+    <div class="contact-links">
+      <a href="mailto:r.pruthvi07@gmail.com">r.pruthvi07@gmail.com</a>
+      <a href="https://linkedin.com/in/pruthvi-rathod-07b56a138" target="_blank">LinkedIn</a>
+      <a href="https://github.com/pruthvi0007" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Pruthvi Rathod &copy; 2026</p>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
